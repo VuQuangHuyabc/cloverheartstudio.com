@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - Clover Heart Studio LLC</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-clover text-success me-2"></i>Clover Heart Studio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="cart.html" class="btn btn-outline-success position-relative">
+                        <i class="fas fa-shopping-cart"></i> Cart
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="py-3 bg-light">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Home</a></li>
+                    <li class="breadcrumb-item"><a href="products.html" class="text-decoration-none">Products</a></li>
+                    <li class="breadcrumb-item active" id="product-name-breadcrumb">Product Detail</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Product Detail Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Product Images -->
+                <div class="col-lg-6 mb-4">
+                    <div class="product-images">
+                        <!-- Main Image -->
+                        <div class="main-image mb-3">
+                            <img id="main-product-image" src="Products/1/variant-image-1.jpeg" alt="Product" class="img-fluid rounded-3 shadow">
+                        </div>
+                        <!-- Thumbnail Images -->
+                        <div class="thumbnail-images d-flex gap-2 overflow-auto" id="thumbnail-container">
+                            <!-- Thumbnails will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Information -->
+                <div class="col-lg-6">
+                    <div class="product-info">
+                        <h1 class="display-5 fw-bold mb-3" id="product-title">Handmade Bracelet</h1>
+                        <div class="rating mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star-half-alt text-warning"></i>
+                            <span class="text-muted">(4.5) - 23 reviews</span>
+                        </div>
+                        
+                        <div class="price-section mb-4">
+                            <span class="h3 text-success fw-bold" id="product-price">$29.99</span>
+                            <span class="h4 text-muted text-decoration-line-through ms-2" id="product-sale-price">$39.99</span>
+                            <span class="badge bg-danger ms-2">25% OFF</span>
+                        </div>
+
+                        <p class="lead mb-4" id="product-description">
+                            This beautiful handmade bracelet is crafted with love and attention to detail. Each piece is unique and carries positive energy, making it the perfect accessory for any occasion.
+                        </p>
+
+                        <!-- Product Variants -->
+                        <div class="mb-4">
+                            <h5 class="mb-3">Select Variant:</h5>
+                            <div class="d-flex gap-2" id="product-variants">
+                                <!-- Variants will be loaded here -->
+                            </div>
+                        </div>
+
+                        <!-- Quantity and Add to Cart -->
+                        <div class="d-flex gap-3 mb-4">
+                            <div class="input-group" style="max-width: 150px;">
+                                <button class="btn btn-outline-secondary" type="button" id="quantity-decrease">-</button>
+                                <input type="number" class="form-control text-center" id="quantity" value="1" min="1" max="10">
+                                <button class="btn btn-outline-secondary" type="button" id="quantity-increase">+</button>
+                            </div>
+                            <button class="btn btn-success btn-lg flex-grow-1" id="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                            </button>
+                            <button class="btn btn-outline-danger btn-lg" id="wishlist-btn">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+
+                        <!-- Product Features -->
+                        <div class="product-features mb-4">
+                            <h5 class="mb-3">Features:</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Handmade with love</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Premium materials</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Adjustable size</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Gift packaging included</li>
+                            </ul>
+                        </div>
+
+                        <!-- Shipping Information -->
+                        <div class="alert alert-info">
+                            <i class="fas fa-truck me-2"></i>
+                            <strong>Free Shipping</strong> on orders over $50. Estimated delivery: 5-7 business days.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Tabs -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <ul class="nav nav-tabs" id="productTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab">Description</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab">Reviews</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="shipping-tab" data-bs-toggle="tab" data-bs-target="#shipping" type="button" role="tab">Shipping & Returns</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="productTabsContent">
+                        <div class="tab-pane fade show active" id="description" role="tabpanel">
+                            <div class="p-4">
+                                <h4>Product Description</h4>
+                                <p id="detailed-description">
+                                    Each bracelet is carefully handcrafted by skilled artisans who pour their heart and soul into every piece. 
+                                    The materials used are sourced from sustainable suppliers, ensuring that your purchase is not only beautiful 
+                                    but also environmentally conscious. The design combines traditional techniques with modern aesthetics, 
+                                    creating a timeless piece that can be worn for any occasion.
+                                </p>
+                                <h5 class="mt-4">Care Instructions</h5>
+                                <ul>
+                                    <li>Avoid contact with water and chemicals</li>
+                                    <li>Store in a dry place when not in use</li>
+                                    <li>Clean gently with a soft cloth</li>
+                                    <li>Avoid direct sunlight for extended periods</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="reviews" role="tabpanel">
+                            <div class="p-4">
+                                <h4>Customer Reviews</h4>
+                                <div class="review-item mb-4">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <strong>Sarah Johnson</strong>
+                                        <div class="text-warning">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <p>"Absolutely beautiful! The craftsmanship is amazing and it looks even better in person. Highly recommend!"</p>
+                                </div>
+                                <div class="review-item mb-4">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <strong>Emily Davis</strong>
+                                        <div class="text-warning">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <p>"Love this bracelet! It's exactly what I was looking for. The quality is excellent and the shipping was fast."</p>
+                                </div>
+                                <button class="btn btn-outline-success">Write a Review</button>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="shipping" role="tabpanel">
+                            <div class="p-4">
+                                <h4>Shipping & Returns</h4>
+                                <h5>Shipping Information</h5>
+                                <ul>
+                                    <li>Orders processed within 1-3 business days</li>
+                                    <li>Standard shipping: 5-7 business days</li>
+                                    <li>Expedited shipping available at checkout</li>
+                                    <li>Free shipping on orders over $50</li>
+                                </ul>
+                                <h5>Return Policy</h5>
+                                <ul>
+                                    <li>30-day return policy</li>
+                                    <li>Items must be in original packaging</li>
+                                    <li>Customer responsible for return shipping</li>
+                                    <li>Refunds processed within 30 days of receipt</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h3 class="mb-4">Related Products</h3>
+                    <div class="row g-4" id="related-products">
+                        <!-- Related products will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-5 bg-success text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h3 class="mb-4">Subscribe to Our Newsletter</h3>
+                    <p class="mb-4">Get updates on new products and special offers</p>
+                    <form class="row g-3 justify-content-center" id="newsletter-form">
+                        <div class="col-md-6">
+                            <input type="email" class="form-control form-control-lg" placeholder="Enter your email" required>
+                        </div>
+                        <div class="col-md-3">
+                            <button type="submit" class="btn btn-light btn-lg w-100">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="fw-bold mb-3">Clover Heart Studio LLC</h5>
+                    <p class="mb-3">Creating beautiful handmade bracelets with love and care. Each piece is crafted with attention to detail and positive energy.</p>
+                    <div class="contact-info">
+                        <p class="mb-2"><i class="fas fa-envelope me-2"></i> contact@cloverheartstudio.com</p>
+                        <p class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 1012 Marquez Place, Ste. 106-B Santa Fe, NM 87505 United States</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="about.html" class="text-white-50 text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-white-50 text-decoration-none">Contact Us</a></li>
+                        <li class="mb-2"><a href="privacy-policy.html" class="text-white-50 text-decoration-none">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="shipping-policy.html" class="text-white-50 text-decoration-none">Shipping Policy</a></li>
+                        <li class="mb-2"><a href="terms-conditions.html" class="text-white-50 text-decoration-none">Terms and Conditions</a></li>
+                        <li class="mb-2"><a href="returns-refunds.html" class="text-white-50 text-decoration-none">Returns and Refunds</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 class="fw-bold mb-3">Stay Connected</h5>
+                    <p class="mb-3">Subscribe to get special offers and updates</p>
+                    <form class="newsletter-form" id="footer-newsletter-form">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your email" required>
+                            <button class="btn btn-success" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="bg-white-50">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 Clover Heart Studio LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
